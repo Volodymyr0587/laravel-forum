@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/register/index', [RegisterController::class, 'index']);
+Route::post('register/save', [RegisterController::class, 'save']);
+
+Route::get('/login/index', [LoginController::class, 'index']);
+Route::post('/login/checkErrors', [LoginController::class, 'checkErrors']);
+Route::get('/logout', [LoginController::class, 'logout']);
